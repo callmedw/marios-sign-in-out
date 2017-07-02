@@ -12,6 +12,7 @@ Product.destroy_all
                             image: Faker::Placeholdit.image ,
                             cost: Faker::Commerce.price,
                             description: Faker::Commerce.department,
+                            rating: Faker::Number.between(1, 5),
                             country_origin: Faker::Address.country)
   # 5.times do |index|
   #   product.reviews.create!(author: Faker::Name.unique.name,
