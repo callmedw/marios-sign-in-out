@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1>Mario's</h1>
+  <h4>some things about Mario's business</h4>
+</div>
+
+<h3>Here are all of our fine products</h3>
+
+    <h3>All Products</h3>
+    <ul>
+      <% @products.each do |product| %>
+        <li><%= link_to product.name, product_path(product)%>, <%= product.cost %>, <%= product.country %></li>
+      <% end %>
+    </ul>
+
+    <%= link_to "Add a New Product", new_product_path %>
