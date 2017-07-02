@@ -14,13 +14,12 @@ Product.destroy_all
                             description: Faker::Commerce.department,
                             rating: Faker::Number.between(1, 5),
                             country_origin: Faker::Address.country)
-  # 5.times do |index|
-  #   product.reviews.create!(author: Faker::Name.unique.name,
-  #                           content: Faker::HitchhikersGuideToTheGalaxy.quote,
-  #                           rating: Faker::Number.between(1, 5))
-  # end
+  5.times do |index|
+    product.reviews.create!(author: Faker::Name.unique.name,
+                            content: Faker::TwinPeaks.quote)
+  end
 end
 
 
 p "Created #{Product.count} products"
-# p "Created #{Review.count} reviews"
+p "Created #{Review.count} reviews"
