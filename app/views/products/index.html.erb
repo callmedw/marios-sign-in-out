@@ -8,7 +8,7 @@
     <h3>All Products</h3>
     <ul>
       <% @products.each do |product| %>
-        <li><%= link_to product.name, product_path(product)%>, <%= product.cost %>, <%= product.country %></li>
+        <li><%= link_to product.name, product_path(product)%>, <%= product.cost %>, <%= product.country_origin %></li>
       <% end %>
     </ul>
 
