@@ -4,3 +4,12 @@
 <p><%= @product.country_origin %></p>
 <p><%= @product.cost %></p>
 <p><%= @product.description %></p>
+
+<hr>
+<p><%= link_to "Edit", edit_product_path(@product) %></p>
+<p><%= link_to "Delete", product_path(@product),
+                          :data => {
+                          :confirm => "You sure?",
+                          :method => "delete"} %></p>
+
+<hr>
