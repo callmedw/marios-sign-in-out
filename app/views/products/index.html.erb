@@ -3,13 +3,38 @@
   <h4>some things about Mario's business</h4>
 </div>
 
-<h3>Here are all of our fine products</h3>
-
+<div class="row">
+  <div class="col-md-8">
     <h3>All Products</h3>
+    <p><%= link_to "Add a New Product", new_product_path %></p>
     <ul>
-      <% @products.each do |product| %>
+      <% @products.alpha.each do |product| %>
         <li><%= link_to product.name, product_path(product)%>, <%= product.cost %>, <%= product.country_origin %></li>
       <% end %>
     </ul>
+  </div>
+  <div class="col-md-4">
+    <h3>Recently Added Products</h3>
+    <ul>
+      <% @products.creationNew.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
 
-    <%= link_to "Add a New Product", new_product_path %>
+    <h3>Most Reviewed Products</h3>
+    <ul>
+      <% @products.mostReviews.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
+
+    <h3>Local (made in the USA) Products</h3>
+    <ul>
+      <% @products.local.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
+
+
+  </div>
+</div>
