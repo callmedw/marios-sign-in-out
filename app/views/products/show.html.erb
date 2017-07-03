@@ -1,6 +1,5 @@
 <h2><%= @product.name %></h2>
 <%= image_tag("#{@product.image}") %>
-<p><%= @product.rating %></p>
 <p><%= @product.country_origin %></p>
 <p><%= @product.cost %></p>
 <p><%= @product.description %></p>
@@ -20,6 +19,7 @@
   <ul>
     <% @product.reviews.each do |review| %>
     <p>Reviewed by: <%= review.author %></p>
+    <p>Rating: <%= review.rating %></p>
     <p><%= review.content %></p>
     <br>
     <%end%>
