@@ -8,11 +8,11 @@ describe "the delete a product pathway" do
     fill_in 'product[cost]', :with => '500.00'
     fill_in 'product[country_origin]', :with => 'United States'
     fill_in 'product[description]', :with => 'Crafts, man!'
-    fill_in 'product[image]', :with => 'x'
+    fill_in 'product[image]', :with => 'https://ec-i21.geccdn.net/site/images/n-picgroup/30003713.jpg'
     click_on 'Create Product'
     expect(page).to have_content 'Craftsmen Workbench'
-    click_on page.all("Craftsmen Workbench").first()
-
+    find('.all_products').click_on("Craftsmen Workbench")
+    expect(page).to have_content 'Remove this product'
     click_on 'Remove this product'
     expect(page).to have_content "Mario's"
   end

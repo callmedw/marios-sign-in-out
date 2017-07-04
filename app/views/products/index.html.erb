@@ -7,7 +7,7 @@
   <div class="col-md-8">
     <h3>All Products</h3>
     <p><%= link_to "Add a New Product", new_product_path %></p>
-    <ul>
+    <ul class="all_products">
       <% @products.alpha.each do |product| %>
         <li><%= link_to product.name, product_path(product)%>, <%= product.cost %>, <%= product.country_origin %></li>
       <% end %>
