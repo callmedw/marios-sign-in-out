@@ -1,5 +1,10 @@
 class ProductsController < ApplicationController
 
+  before_action :authorize, only: [:new, :create, :edit, :destroy]
+
+  def secret
+  end
+
   def index
     @products = Product.all
   end

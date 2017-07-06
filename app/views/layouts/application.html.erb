@@ -10,9 +10,19 @@
 
   <body>
     <div class="containter">
+      <% if current_user %>
+      <%= current_user.user_name %> | <%= link_to "Sign out", '/signout' %>
+    <% else %>
+      <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %> |
+    <% end %>
+    <%= link_to "Home", '/' %>
+
+    <div class="alerts">
       <%= flash[:alert] %>
       <%= flash[:notice] %>
-      <%= yield %>
+    </div>
+    
+    <%= yield %>
     </div>
   </body>
 </html>

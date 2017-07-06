@@ -15,5 +15,12 @@
  // */
 
 
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.alerts {
+  text-align: center;
+  font-size: 24px;
+  font-color: white;
+  background-color: red;
+}
